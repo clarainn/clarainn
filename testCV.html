@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clara Inocente | PhD Dr. DVM - Test Manager Certifiée ISTQB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+        .hero-gradient {
+            background: radial-gradient(ellipse at top, #1a1a2e 0%, #0a0a0a 50%);
+        }
+        .skill-tag {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s;
+        }
+        .skill-tag:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        .skill-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+        .skill-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(102, 126, 234, 0.3);
+            transform: translateY(-5px);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .certification-badge {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #000;
+            font-weight: bold;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        .profile-image {
+            object-fit: cover;
+            object-position: center top;
+            width: 100%;
+            height: 100%;
+        }
+        .tech-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter">
+                <span class="gradient-text">CI</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="nav-link hover:text-white transition-colors">À Propos</a>
+                <a href="#experience" class="nav-link hover:text-white transition-colors">Expérience</a>
+                <a href="#certifications" class="nav-link hover:text-white transition-colors">Certifications</a>
+                <a href="#skills" class="nav-link hover:text-white transition-colors">Compétences IT</a>
+                <a href="#testing" class="nav-link hover:text-white transition-colors">Métier du Test</a>
+                <a href="#contact" class="nav-link hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleLanguage()" class="text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">
+                    PT | FR | EN
+                </button>
+                <button onclick="toggleMenu()" class="md:hidden text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-white/5">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#about" class="hover:text-purple-400 transition-colors">À Propos</a>
+                <a href="#experience" class="hover:text-purple-400 transition-colors">Expérience</a>
+                <a href="#certifications" class="hover:text-purple-400 transition-colors">Certifications</a>
+                <a href="#skills" class="hover:text-purple-400 transition-colors">Compétences IT</a>
+                <a href="#testing" class="hover:text-purple-400 transition-colors">Métier du Test</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
+            <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-2000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 reveal active">
+                <div class="flex flex-wrap gap-3">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-sm">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <span class="text-purple-300">Disponible pour opportunités</span>
+                    </div>
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full certification-badge text-sm">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span>ISTQB Certified</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    Clara <span class="gradient-text">Inocente</span>
+                </h1>
+                
+                <h2 class="text-2xl md:text-3xl text-gray-400 font-light">
+                    <span id="typing-text" class="typing-effect"></span>
+                </h2>
+                
+                <p class="text-lg text-gray-400 max-w-lg leading-relaxed">
+                    Test Manager certifiée ISTQB avec une formation unique en Médecine Vétérinaire (DVM) 
+                    et Neurosciences (PhD). Experte en stratégie de test, automatisation et gestion d'équipes QA.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:-translate-y-1">
+                        Me Contacter
+                    </a>
+                    <a href="#testing" class="px-8 py-4 border border-white/20 rounded-full font-semibold hover:bg-white/5 transition-all">
+                        Expertise en Test
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-6 pt-4">
+                    <a href="https://linkedin.com/in/clara-inocente-phd-dr-dvm-a8623844" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="mailto:clara.inocente@email.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative floating reveal active delay-200">
+                <div class="relative w-full aspect-[3/4] max-w-md mx-auto">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl rotate-6 opacity-20"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl -rotate-6 opacity-20"></div>
+                    <div class="relative bg-gray-900 rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-full">
+                        <!-- SUA FOTO AQUI - SUBSTITUA PELO CAMINHO DA IMAGEM -->
+                        <img src="/mnt/kimi/upload/4e02551d-5782-4527-874e-64520f2df3d9-1_all_1352.jpg" 
+                             alt="Clara Inocente - Test Manager" 
+                             class="profile-image opacity-90 hover:opacity-100 transition-opacity">
+                        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                <span class="text-sm font-medium">Genève, Suisse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 border-y border-white/5 bg-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div class="text-center reveal">
+                    <div class="text-4xl font-bold gradient-text mb-2">10+</div>
+                    <div class="text-gray-400 text-sm">Années d'Expérience</div>
+                </div>
+                <div class="text-center reveal delay-100">
+                    <div class="text-4xl font-bold gradient-text mb-2">ISTQB</div>
+                    <div class="text-gray-400 text-sm">Certifiée</div>
+                </div>
+                <div class="text-center reveal delay-200">
+                    <div class="text-4xl font-bold gradient-text mb-2">PhD</div>
+                    <div class="text-gray-400 text-sm">Neurosciences</div>
+                </div>
+                <div class="text-center reveal delay-300">
+                    <div class="text-4xl font-bold gradient-text mb-2">DVM</div>
+                    <div class="text-gray-400 text-sm">Médecine Vétérinaire</div>
+                </div>
+                <div class="text-center reveal delay-400">
+                    <div class="text-4xl font-bold gradient-text mb-2">50+</div>
+                    <div class="text-gray-400 text-sm">Projets Livrés</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl font-bold mb-6">À Propos de Moi</h2>
+                    <div class="space-y-6 text-gray-400 leading-relaxed">
+                        <p>
+                            Je suis une professionnelle polyvalente avec un parcours unique alliant science et technologie. 
+                            En tant que <strong class="text-white">Docteur en Médecine Vétérinaire (DVM)</strong> et 
+                            <strong class="text-white">Docteure en Neurosciences (PhD)</strong> du CNRS/Inserm (France) 
+                            et de l'USP (Brésil), j'ai développé une approche analytique et rigoureuse que j'applique 
+                            quotidiennement dans la gestion de la qualité logicielle.
+                        </p>
+                        <p>
+                            <strong class="text-white">Certifiée ISTQB</strong>, j'occupe actuellement le poste de 
+                            <strong class="text-white">Test Manager</strong> chez PrimeIT, où je dirige des équipes de 
+                            tests automatisés et fonctionnels sur des projets enterprise critiques. Ma formation 
+                            scientifique me confère une capacité unique d'analyse de données, de résolution de problèmes 
+                            complexes et d'attention aux détails.
+                        </p>
+                        <p>
+                            Parlant couramment <strong class="text-white">5 langues</strong> (Portugais, Français, Anglais, 
+                            Espagnol, Italien) et ayant une expérience internationale à Genève, en Suisse, 
+                            j'apporte une perspective globale et multiculturelle à chaque projet.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative reveal delay-200">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-8">
+                            <div class="glass-card p-6 rounded-2xl border border-purple-500/20">
+                                <i data-lucide="award" class="w-10 h-10 text-yellow-400 mb-3"></i>
+                                <h3 class="font-bold text-lg mb-2">ISTQB Certified</h3>
+                                <p class="text-sm text-gray-400">Certification internationale en test logiciel</p>
+                            </div>
+                            <div class="glass-card p-6 rounded-2xl border border-blue-500/20">
+                                <i data-lucide="brain" class="w-10 h-10 text-blue-400 mb-3"></i>
+                                <h3 class="font-bold text-lg mb-2">Neurosciences</h3>
+                                <p class="text-sm text-gray-400">Analyse et résolution de problèmes complexes</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="glass-card p-6 rounded-2xl border border-pink-500/20">
+                                <i data-lucide="code" class="w-10 h-10 text-pink-400 mb-3"></i>
+                                <h3 class="font-bold text-lg mb-2">Test Manager</h3>
+                                <p class="text-sm text-gray-400">Gestion stratégique des équipes QA</p>
+                            </div>
+                            <div class="glass-card p-6 rounded-2xl border border-green-500/20">
+                                <i data-lucide="globe" class="w-10 h-10 text-green-400 mb-3"></i>
+                                <h3 class="font-bold text-lg mb-2">International</h3>
+                                <p class="text-sm text-gray-400">5 langues, 3 continents</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-32 bg-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Certifications</h2>
+                <p class="text-gray-400">Expertise reconnue internationalement</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- ISTQB Main Certification -->
+                <div class="gradient-border p-8 rounded-3xl mb-8 reveal">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="w-24 h-24 rounded-2xl certification-badge flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="award" class="w-12 h-12 text-black"></i>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="inline-block px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-sm font-semibold mb-3">
+                                Foundation Level
+                            </div>
+                            <h3 class="text-3xl font-bold mb-2">ISTQB Certified Tester</h3>
+                            <p class="text-gray-400 mb-4">
+                                International Software Testing Qualifications Board - Certification fondamentale 
+                                couvrant les principes du test, les niveaux de test, les types de test, 
+                                et les techniques de conception de tests.
+                            </p>
+                            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                <span class="skill-tag px-3 py-1 rounded-full text-sm">Test Design</span>
+                                <span class="skill-tag px-3 py-1 rounded-full text-sm">Test Management</span>
+                                <span class="skill-tag px-3 py-1 rounded-full text-sm">Quality Assurance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Certifications -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6 rounded-2xl reveal delay-100">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">PhD Neurosciences</h4>
+                                <p class="text-sm text-gray-500">Université Lyon 1 / USP</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400">Recherche scientifique avancée, analyse statistique, méthodologie expérimentale</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl reveal delay-200">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                                <i data-lucide="heart-pulse" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">DVM - Docteur Vétérinaire</h4>
+                                <p class="text-sm text-gray-500">Université de São Paulo</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400">Médecine, biologie, neurophysiologie, sciences exactes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Skills Section - Detailed -->
+    <section id="skills" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Compétences Informatiques</h2>
+                <p class="text-gray-400">Expertise technique approfondie</p>
+            </div>
+
+            <!-- Programming & Scripting -->
+            <div class="mb-12 reveal">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="code-2" class="w-6 h-6 mr-3 text-purple-400"></i>
+                    Programmation & Scripting
+                </h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <span class="text-purple-400 font-bold">Py</span>
+                        </div>
+                        <h4 class="font-bold mb-2">Python</h4>
+                        <p class="text-sm text-gray-400">Selenium, PyTest, Pandas, NumPy, Scripting d'automatisation</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <span class="text-orange-400 font-bold">Ja</span>
+                        </div>
+                        <h4 class="font-bold mb-2">Java</h4>
+                        <p class="text-sm text-gray-400">Selenium WebDriver, TestNG, JUnit, Maven, Spring Boot</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <span class="text-yellow-400 font-bold">JS</span>
+                        </div>
+                        <h4 class="font-bold mb-2">JavaScript/TypeScript</h4>
+                        <p class="text-sm text-gray-400">Cypress, Playwright, Node.js, NPM</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <i data-lucide="database" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">SQL</h4>
+                        <p class="text-sm text-gray-400">MySQL, PostgreSQL, Oracle, Requêtes complexes, Procédures stockées</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DevOps & CI/CD -->
+            <div class="mb-12 reveal delay-100">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="git-branch" class="w-6 h-6 mr-3 text-blue-400"></i>
+                    DevOps & CI/CD
+                </h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <i data-lucide="container" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Docker</h4>
+                        <p class="text-sm text-gray-400">Containers, Docker Compose, Images, Registries</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <span class="text-red-400 font-bold">Je</span>
+                        </div>
+                        <h4 class="font-bold mb-2">Jenkins</h4>
+                        <p class="text-sm text-gray-400">Pipelines CI/CD, Jobs, Plugins, Groovy Scripts</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <i data-lucide="git-commit" class="w-6 h-6 text-orange-400"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Git</h4>
+                        <p class="text-sm text-gray-400">GitHub, GitLab, Bitbucket, Branching, Merging, Pull Requests</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <span class="text-purple-400 font-bold">K8s</span>
+                        </div>
+                        <h4 class="font-bold mb-2">Kubernetes</h4>
+                        <p class="text-sm text-gray-400">Pods, Services, Deployments, Helm (notions)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operating Systems -->
+            <div class="mb-12 reveal delay-200">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="monitor" class="w-6 h-6 mr-3 text-green-400"></i>
+                    Systèmes d'Exploitation
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <i data-lucide="terminal" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Linux</h4>
+                        <p class="text-sm text-gray-400">Ubuntu, CentOS, Shell Scripting, Commandes avancées, Administration système</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <i data-lucide="layout" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Windows</h4>
+                        <p class="text-sm text-gray-400">Windows 10/11, Server, PowerShell, Administration</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <i data-lucide="apple" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">macOS</h4>
+                        <p class="text-sm text-gray-400">Environnement de développement, Terminal, Homebrew</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud & Infrastructure -->
+            <div class="reveal delay-300">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i data-lucide="cloud" class="w-6 h-6 mr-3 text-cyan-400"></i>
+                    Cloud & Infrastructure
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <span class="text-orange-400 font-bold">AWS</span>
+                        </div>
+                        <h4 class="font-bold mb-2">Amazon Web Services</h4>
+                        <p class="text-sm text-gray-400">EC2, S3, Lambda, CloudWatch, IAM (notions)</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <span class="text-blue-400 font-bold">Az</span>
+                        </div>
+                        <h4 class="font-bold mb-2">Microsoft Azure</h4>
+                        <p class="text-sm text-gray-400">Virtual Machines, DevOps Pipelines, App Services</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl">
+                        <div class="tech-icon">
+                            <i data-lucide="server" class="w-6 h-6 text-green-400"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Infrastructure</h4>
+                        <p class="text-sm text-gray-400">Réseaux, Protocoles TCP/IP, DNS, VPN, Firewalls</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testing Expertise Section - Detailed -->
+    <section id="testing" class="py-32 bg-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Expertise en Test Logiciel</h2>
+                <p class="text-gray-400">Maîtrise complète du métier du test - De la stratégie à l'exécution</p>
+            </div>
+
+            <!-- Test Management -->
+            <div class="mb-12 reveal">
+                <h3 class="text-2xl font-bold mb-6 flex items-center text-purple-400">
+                    <i data-lucide="users" class="w-6 h-6 mr-3"></i>
+                    Gestion des Tests (Test Management)
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="gradient-border p-6 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <i data-lucide="clipboard-list" class="w-5 h-5 mr-2 text-purple-400"></i>
+                            Stratégie & Planification
+                        </h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>• Élaboration de stratégies de test (Master Test Plan)</li>
+                            <li>• Planification des campagnes de test et estimation d'efforts</li>
+                            <li>• Gestion des risques et priorisation des tests</li>
+                            <li>• Définition des critères d'entrée/sortie (Entry/Exit Criteria)</li>
+                            <li>• Métriques de qualité et reporting aux stakeholders</li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border p-6 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <i data-lucide="kanban" class="w-5 h-5 mr-2 text-blue-400"></i>
+                            Gestion d'Équipe QA
+                        </h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>• Lead d'équipes de 5 à 15 testeurs (fonctionnels et automatiseurs)</li>
+                            <li>• Recrutement, formation et mentorat des membres de l'équipe</li>
+                            <li>• Répartition des tâches et suivi des activités quotidiennes</li>
+                            <li>• Animation des cérémonies Agile (Daily, Sprint Planning, Retro)</li>
+                            <li>• Gestion des conflits et résolution de problèmes d'équipe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Automation -->
+            <div class="mb-12 reveal delay-100">
+                <h3 class="text-2xl font-bold mb-6 flex items-center text-blue-400">
+                    <i data-lucide="bot" class="w-6 h-6 mr-3"></i>
+                    Automatisation des Tests
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="skill-card p-6 rounded-2xl">
+                        <h4 class="font-bold mb-3">Frameworks UI</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Selenium WebDriver</span>
+                                <span class="text-xs text-purple-400">Expert</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Cypress</span>
+                                <span class="text-xs text-purple-400">Avancé</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Playwright</span>
+                                <span class="text-xs text-blue-400">Intermédiaire</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Appium (Mobile)</span>
+                                <span class="text-xs text-blue-400">Intermédiaire</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card p-6 rounded-2xl">
+                        <h4 class="font-bold mb-3">API Testing</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Postman / Newman</span>
+                                <span class="text-xs text-purple-400">Expert</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">REST Assured</span>
+                                <span class="text-xs text-purple-400">Avancé</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">SoapUI</span>
+                                <span class="text-xs text-blue-400">Intermédiaire</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">GraphQL Testing</span>
+                                <span class="text-xs text-gray-400">Notions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card p-6 rounded-2xl">
+                        <h4 class="font-bold mb-3">Performance & Sécurité</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">JMeter</span>
+                                <span class="text-xs text-blue-400">Avancé</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Gatling</span>
+                                <span class="text-xs text-blue-400">Intermédiaire</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">OWASP ZAP</span>
+                                <span class="text-xs text-gray-400">Notions</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Load Testing</span>
+                                <span class="text-xs text-blue-400">Intermédiaire</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Types de Test -->
+            <div class="mb-12 reveal delay-200">
+                <h3 class="text-2xl font-bold mb-6 flex items-center text-pink-400">
+                    <i data-lucide="layers" class="w-6 h-6 mr-3"></i>
+                    Types de Test & Méthodologies
+                </h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-green-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Tests Fonctionnels</h4>
+                        <p class="text-xs text-gray-500 mt-1">Black-box, UAT, Exploratory</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="zap" class="w-8 h-8 text-yellow-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Tests Non-Fonctionnels</h4>
+                        <p class="text-xs text-gray-500 mt-1">Performance, Sécurité, UX</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-blue-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Tests Mobiles</h4>
+                        <p class="text-xs text-gray-500 mt-1">iOS, Android, Responsive</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="database" class="w-8 h-8 text-purple-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Tests de Données</h4>
+                        <p class="text-xs text-gray-500 mt-1">ETL, Migration, Intégrité</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="git-merge" class="w-8 h-8 text-orange-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Tests d'Intégration</h4>
+                        <p class="text-xs text-gray-500 mt-1">API, Microservices, E2E</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="shield" class="w-8 h-8 text-red-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Tests de Régression</h4>
+                        <p class="text-xs text-gray-500 mt-1">Automatisés, Smoke, Sanity</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="accessibility" class="w-8 h-8 text-cyan-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Accessibilité (a11y)</h4>
+                        <p class="text-xs text-gray-500 mt-1">WCAG 2.1, RGAA</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i data-lucide="globe" class="w-8 h-8 text-green-400 mx-auto mb-2"></i>
+                        <h4 class="font-semibold text-sm">Tests Localisés</h4>
+                        <p class="text-xs text-gray-500 mt-1">I18n, L10n, Multi-langues</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agile & BDD -->
+            <div class="reveal delay-300">
+                <h3 class="text-2xl font-bold mb-6 flex items-center text-green-400">
+                    <i data-lucide="refresh-cw" class="w-6 h-6 mr-3"></i>
+                    Méthodologies Agiles & BDD
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="gradient-border p-6 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-3">Agile / Scrum / Kanban</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>• Product Owner : Gestion du backlog, user stories, acceptance criteria</li>
+                            <li>• Scrum Master : Facilitation, remove impediments, coaching Agile</li>
+                            <li>• Sprint Planning, Daily Stand-ups, Sprint Reviews, Retrospectives</li>
+                            <li>• Kanban : Flow management, WIP limits, continuous delivery</li>
+                            <li>• SAFe (Scaled Agile Framework) - Notions</li>
+                        </ul>
+                    </div>
+                    <div class="gradient-border p-6 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-3">BDD / TDD / ATDD</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>• Cucumber / Gherkin : Écriture de scénarios Given-When-Then</li>
+                            <li>• SpecFlow (C# BDD) pour applications .NET</li>
+                            <li>• Behave (Python BDD) pour frameworks Python</li>
+                            <li>• Living Documentation et collaboration Business/QA/Dev</li>
+                            <li>• TDD : Écriture de tests unitaires avant le code (JUnit, NUnit)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Ecosystem -->
+            <div class="mt-12 reveal delay-400">
+                <h3 class="text-2xl font-bold mb-6 flex items-center text-cyan-400">
+                    <i data-lucide="tool" class="w-6 h-6 mr-3"></i>
+                    Écosystème d'Outils de Test
+                </h3>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div>
+                            <h5 class="font-semibold text-purple-400 mb-3">Test Management</h5>
+                            <ul class="space-y-1 text-sm text-gray-400">
+                                <li>• Jira + Xray</li>
+                                <li>• TestRail</li>
+                                <li>• Zephyr</li>
+                                <li>• qTest</li>
+                                <li>• HP ALM / QC</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-blue-400 mb-3">Collaboration</h5>
+                            <ul class="space-y-1 text-sm text-gray-400">
+                                <li>• Confluence</li>
+                                <li>• SharePoint</li>
+                                <li>• Slack / Teams</li>
+                                <li>• Miro / Mural</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-green-400 mb-3">Versioning & CI</h5>
+                            <ul class="space-y-1 text-sm text-gray-400">
+                                <li>• Git (GitHub/GitLab)</li>
+                                <li>• Jenkins</li>
+                                <li>• Azure DevOps</li>
+                                <li>• GitLab CI</li>
+                                <li>• GitHub Actions</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-pink-400 mb-3">Reporting & Analyse</h5>
+                            <ul class="space-y-1 text-sm text-gray-400">
+                                <li>• Allure Report</li>
+                                <li>• Extent Reports</li>
+                                <li>• ReportPortal</li>
+                                <li>• Kibana / Grafana</li>
+                                <li>• Excel / PowerBI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-32">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Expérience Professionnelle</h2>
+                <p class="text-gray-400">Parcours dans le test et la qualité logicielle</p>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 timeline-line hidden md:block"></div>
+                
+                <!-- PrimeIT -->
+                <div class="relative mb-12 reveal">
+                    <div class="hidden md:block absolute left-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-purple-500 border-4 border-gray-900 z-10"></div>
+                    <div class="md:ml-20 gradient-border p-8 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Test Manager</h3>
+                                <p class="text-purple-400 font-medium">PrimeIT</p>
+                            </div>
+                            <span class="text-gray-500 text-sm mt-2 md:mt-0">Genève, Suisse • Actuel</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Direction d'équipes QA de 8 personnes sur projets bancaires et institutionnels</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Implémentation de stratégies de test end-to-end (E2E) et automatisation CI/CD</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Gestion des relations avec stakeholders et reporting qualité aux directions métier</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Mentorat technique et montée en compétence des testeurs (Selenium, API Testing)</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Test Management</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Selenium</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">CI/CD</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Agile</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Owner & Test Lead -->
+                <div class="relative mb-12 reveal delay-100">
+                    <div class="hidden md:block absolute left-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10"></div>
+                    <div class="md:ml-20 gradient-border p-8 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Product Owner & Test Lead</h3>
+                                <p class="text-blue-400 font-medium">Entreprise Multinationale</p>
+                            </div>
+                            <span class="text-gray-500 text-sm mt-2 md:mt-0">Genève</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Double casquette PO/QA : Gestion produit et qualité technique</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Conception et mise en place de frameworks d'automatisation (Cypress, Python)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Ateliers de refinement avec équipes métier et développement</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Research Background -->
+                <div class="relative reveal delay-200">
+                    <div class="hidden md:block absolute left-8 transform -translate-x-1/2 w-4 h-4 rounded-full bg-pink-500 border-4 border-gray-900 z-10"></div>
+                    <div class="md:ml-20 gradient-border p-8 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Chercheuse en Neurosciences</h3>
+                                <p class="text-pink-400 font-medium">CNRS / Inserm / USP</p>
+                            </div>
+                            <span class="text-gray-500 text-sm mt-2 md:mt-0">France & Brésil</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-pink-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Recherche doctorale en neurosciences comportementales et moléculaires</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-pink-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Publications scientifiques et présentations dans conférences internationales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-pink-500 mr-3 mt-0.5 flex-shrink-0"></i>
+                                <span>Analyse statistique avancée (R, Python, SPSS) et modélisation de données</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-32 bg-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Formation Académique</h2>
+                <p class="text-gray-400">Excellence académique internationale</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- PhD -->
+                <div class="gradient-border p-8 rounded-2xl reveal group hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="p-3 bg-purple-500/10 rounded-xl">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-purple-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">Doctorat</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Doctorat en Neurosciences (PhD)</h3>
+                    <p class="text-purple-400 mb-4">Université Claude Bernard Lyon 1</p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>• Recherche en neurosciences cognitives et comportementales</li>
+                        <li>• Collaboration CNRS/Inserm (France) et USP (Brésil)</li>
+                        <li>• Méthodologie expérimentale et analyse statistique avancée</li>
+                    </ul>
+                </div>
+
+                <!-- DVM -->
+                <div class="gradient-border p-8 rounded-2xl reveal delay-100 group hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="p-3 bg-blue-500/10 rounded-xl">
+                            <i data-lucide="heart-pulse" class="w-8 h-8 text-blue-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">Graduation</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Médecine Vétérinaire (DVM)</h3>
+                    <p class="text-blue-400 mb-4">Université de São Paulo (USP)</p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>• Formation complète en santé animale et biologie</li>
+                        <li>• Spécialisation en neurophysiologie</li>
+                        <li>• Base solide en sciences exactes et biologiques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Langues</h2>
+                <p class="text-gray-400">Communication internationale</p>
+            </div>
+            
+            <div class="glass-card p-8 rounded-2xl reveal">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🇧🇷</div>
+                        <div class="font-semibold">Portugais</div>
+                        <div class="text-sm text-gray-500">Langue maternelle</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🇫🇷</div>
+                        <div class="font-semibold">Français</div>
+                        <div class="text-sm text-gray-500">Courant (C2)</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🇬🇧</div>
+                        <div class="font-semibold">Anglais</div>
+                        <div class="text-sm text-gray-500">Courant (C1)</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🇪🇸</div>
+                        <div class="font-semibold">Espagnol</div>
+                        <div class="text-sm text-gray-500">Intermédiaire (B2)</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🇮🇹</div>
+                        <div class="font-semibold">Italien</div>
+                        <div class="text-sm text-gray-500">Intermédiaire (B1)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative overflow-hidden bg-white/5">
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-transparent"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Contactez-Moi</h2>
+                <p class="text-gray-400">Disponible pour opportunités en Suisse et international</p>
+            </div>
+            
+            <div class="glass-card p-8 md:p-12 rounded-3xl reveal">
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message envoyé ! Je vous répondrai dans les plus brefs délais.');">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nom complet</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-purple-500 transition-colors" placeholder="Votre nom">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-purple-500 transition-colors" placeholder="votre@email.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Sujet</label>
+                        <input type="text" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-purple-500 transition-colors" placeholder="Opportunité de Test Manager...">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-purple-500 transition-colors" placeholder="Décrivez votre projet ou opportunité..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:-translate-y-1">
+                        Envoyer le Message
+                    </button>
+                </form>
+                
+                <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl">
+                            CI
+                        </div>
+                        <div>
+                            <div class="font-semibold">Clara Inocente, PhD Dr. DVM</div>
+                            <div class="text-sm text-gray-500">Test Manager Certifiée ISTQB • Genève, Suisse</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/clara-inocente-phd-dr-dvm-a8623844" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:clara.inocente@email.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Clara Inocente. Test Manager Certifiée ISTQB. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Language toggle (visual only for demo)
+        function toggleLanguage() {
+            alert('Sélecteur de langue: FR (actuel) | PT | EN');
+        }
+
+        // Typing effect in French
+        const text = "Test Manager Certifiée ISTQB";
+        const typingElement = document.getElementById('typing-text');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Start typing effect when page loads
+        window.addEventListener('load', typeWriter);
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/80', 'backdrop-blur-md');
+            } else {
+                nav.classList.remove('bg-black/80', 'backdrop-blur-md');
+            }
+        });
+    </script>
+</body>
+</html>
